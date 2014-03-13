@@ -1,0 +1,27 @@
+= File-level Encryption, the right way
+
+Nothing here yet, just brainstorming.
+
+
+== References ==
+
+ - https://defuse.ca/audits/encfs.htm
+
+
+== Best Practices ==
+
+ - Use XTS mode.
+ - Encrypt then MAC
+ - use at least 128 bit MACs
+ - encrypt configuration
+ - 
+
+== Features ==
+
+ - Hide file layout
+   - store metadata seperately
+   - If we use 1 real-file per file, the number of files & appoximate size of files still disclosed
+   - If we split files into blocks which are stored 1 block per real-file we obscure the number of files (potentially), but the appoximate size is still obtainable
+     - size of metadata files will be predictable, some analysis of their size compared to average size should let us guess how many files there are.
+
+ - 
